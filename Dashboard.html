@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dashboard</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"></script>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <link rel="manifest" href="manifest.json">
+     <script>
+          //if browser support service worker
+          if ('serviceWorker' in navigator) {
+               navigator.serviceWorker.register('sw2.js');
+          };
+     </script>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <!-- jwqyery link -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+     <div class="d-flex instituteContent parentdiv" id="wrapper">
+          <div class="bg-dark text-light childerndiv" style="height: 100vh;" id="sidebar-wrapper ">
+               <div class="sidebar-heading text-center quizHeading">iQuiz </div>
+
+               <div class="sidenav">
+                    <ul class="navbar-nav nav-pills p-2 mt-2">
+
+                         <!-- <li class="dropdown-btn">
+                              Exam Attempt
+                              <i class="fa fa-caret-down"></i>
+                              <i class="menu-icon fa fa-plus-square"></i>
+                         </li> -->
+                         <!-- <div class="dropdown-container">
+                              <li>
+                                   <a class="text-decoration-none" href="#">Add Inventory</a>
+                              </li>
+
+                         </div> -->
+                         <li class="links d-grid gap-2">
+                              <!-- <a class="text-decoration-none text-light active nav-link" aria-current="page"
+                                   href="D:\Danial\VS code\Projects\Quiz Web\Dashboard.html">Dashboard</a> -->
+                              <input type="button" class=" btn btn-primary text-start active nav-link" value="Dashboard"
+                                   id="DashboardPage" aria-current="page" onclick="dashboard()">
+                         </li>
+                         <li class="links d-grid gap-2">
+                              <!-- <a class="text-decoration-none text-light "
+                                   href="D:\Danial\VS code\Projects\Quiz Web\Institute.html">Institute</a> -->
+                              <input type="button" class="links btn btn-primary text-start text-light nav-link"
+                                   value="Institute" id="institutePage" onclick="institute()">
+                         </li>
+                         <li class="links d-grid gap-2">
+                              <!-- <a class="text-decoration-none text-light "
+                                   href="D:\Danial\VS code\Projects\Quiz Web\Class.html">Class</a> -->
+                              <input type="button" class="links btn btn-primary text-start text-light nav-link"
+                                   value="Class" id="classPage" onclick="classes()">
+                         </li>
+                         <li class="links d-grid gap-2">
+                              <!-- <a class="text-decoration-none text-light "
+                                   href="D:\Danial\VS code\Projects\Quiz Web\SubjectName.html">Subject Name</a> -->
+                              <input type="button" class="links btn btn-primary text-start text-light nav-link"
+                                   value="Subject Name" id="subjectNamePage" onclick="subjectName()">
+                         </li>
+                         <li class="links d-grid gap-2">
+                              <!-- <a class="text-decoration-none text-light "
+                                   href="D:\Danial\VS code\Projects\Quiz Web\Exam.html">Exam</a> -->
+                              <input type="button" class="links btn btn-primary text-start text-light nav-link"
+                                   value="Exam" id="ExamPage" onclick="Exam()">
+                         </li>
+                    </ul>
+               </div>
+
+          </div>
+
+
+
+          <div class="row " style="width: 100%;">
+
+               <div class="col-md-12">
+
+                    <div class="row shadow p-3 text-dark  rounded-3">
+                         <div class="col-md-3">
+                              <i id="toggle" class="fas fa-bars"></i>
+                              <h2>Dashboard</h2>
+                         </div>
+                         <div class="col-md-9 text-end">
+                              <input type="button" class="btn btn-primary" value="Logout" onclick="Logout()">
+                         </div>
+                    </div>
+                    <div class="row p-3 d-flex justify-content-around  ">
+                         <div class="card1  position-relative col-md-3 bg-dark  p-3  shadow  rounded">
+                              <a class=" text-decoration-none text-light" href="">
+                                   <h3 class="cardText px-4 pt-2 ">15</h3>
+                                   <span class="cardText px-2 "> Student's Attempt Exam </span>
+
+                                   <div class="position-absolute top-0 end-0">
+                                        <p class="  px-4" style="font-size: 45px;"><i class="fas fa-user-graduate "></i>
+                                        </p>
+                                   </div>
+                              </a>
+
+                         </div>
+
+                         <div class="card1 position-relative col-md-3 bg-info text-light shadow rounded">
+
+                              <h3 class=" px-4 pt-3 ">15</h3>
+                              <p class="px-3 pt-1  fs-5 "> Remaining Exam</p>
+
+                              <div class="position-absolute top-0 end-0">
+                                   <p class="  px-4" style="font-size: 45px;"><i class="fas fa-user-graduate "></i></p>
+                              </div>
+                         </div>
+                         <div class="card1 position-relative col-md-3 bg-warning text-light shadow  rounded">
+
+                              <h3 class=" px-4 pt-3 ">15</h3>
+                              <span class="px-3 pt-1  fs-5 "> Exam Result </span>
+
+                              <div class="position-absolute top-0 end-0">
+                                   <p class="  px-4" style="font-size: 45px;"><i class="fas fa-user-graduate "></i></p>
+                              </div>
+                         </div>
+                         <!-- <div class="col-md-4">
+                              <div class="card bg-dark text-white ">
+                                   <img src="card2bg copy.jpg" class="card-img" alt="...">
+                                   <div class="card-img-overlay">
+                                        <h3 class="card-title p-1">15</h3>
+                                        <p class="card-text">Remaining Exam</p>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-md-4 text-light">
+                              <div class="card bg-dark text-white shadow bg-body  rounded ">
+                                   <img src="card3bg copy.jpg" class="card-img" alt="...">
+                                   <div class="card-img-overlay">
+                                        <h3 class="card-title p-1">15</h3>
+                                        <p class="card-text">Exam Result</p>
+                                   </div>
+                              </div>
+                         </div> -->
+                    </div>
+               </div>
+          </div>
+
+
+          <!-- </div> -->
+     </div>
+
+     <script>
+          function dashboard() {
+               var dash = document.getElementById("dashboardPage").innerHTML = location.replace("Dashboard.html");
+          }
+
+          function institute() {
+               var Institute = document.getElementById("institutePage").innerHTML = location.replace("Institute.html")
+          }
+          function classes() {
+               var class1 = document.getElementById("class").innerHTML = location.replace("Class.html");
+          }
+          function subjectName() {
+               var subject = document.getElementById("subjectNamePage").innerHTML = location.replace("SubjectName.html");
+          }
+          function Exam() {
+               var exam1 = document.getElementById("ExamPage").innerHTML = location.replace("Exam.html");
+          }
+
+
+          function Logout() {
+               location.replace("Login.html");
+          }
+
+
+          $("#toggle").click(function () {
+               // $(".sidenav").toggle('open');
+               // $(".quizHeading").toggle('open');
+
+               if($(this).hasClass("fa-bars")){
+                    // $(this).removeClass("fa-bars");
+                    // $(this).addClass('fa-arrow-left');
+                    $(this).parents(".parentdiv").children(".childerndiv").show("slow");
+               }
+               else{
+                    $(this).addClass("fa-bars");
+                    // $(this).removeClass('fa-arrow-left');
+                    $(this).parents(".parentdiv").children(".childerndiv").hide("slow");
+               }
+          
+
+          })
+         
+
+     </script>
+
+</body>
+
+</html>

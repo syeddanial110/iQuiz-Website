@@ -1,0 +1,143 @@
+*{
+     box-sizing: border-box;
+}
+body{
+ 
+     overflow-x: hidden;
+}
+.loginBgImg{
+  background-image: url('New-blog-graphic.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.input{
+     /* border: none !important; */
+     /* border-color: blue !important; */
+     
+}
+.inputbg{
+     background-color: transparent !important;
+     border-top: white !important;
+     border-right: white !important;
+     border-left: white !important;
+     /* width: 50% !important; */
+}
+.inrtoBg{
+     background-image: url('bg2\ copy.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+     
+}
+.forgotBtn{
+   text-decoration: none;
+   
+}
+/* Dashboard Css */
+.dashboardBgImg{
+  background-image: url('/images/dashboardbg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+ 
+}
+
+.card1:hover{
+  transform: scale(1.1);
+  transition: 0.6s ease-in-out;
+}
+.card1{
+  transition: 0.5s;
+}
+
+
+/* Dashboard, Institute, Class, Subject Name, Exam css */
+
+
+
+#sidebar-wrapper {
+     min-height: 100vh;
+     margin-left: -15rem;
+     -webkit-transition: margin .25s ease-out;
+     -moz-transition: margin .25s ease-out;
+     -o-transition: margin .25s ease-out;
+     transition: margin .25s ease-out;
+     border: none !important;
+     width: 220px;
+     position: relative;
+   }
+   
+#sidebar-wrapper .sidebar-heading {
+     padding: 0.875rem 1.25rem;
+     font-size: 1.2rem;
+   }
+   
+   #sidebar-wrapper .list-group {
+     width: 15rem;
+   }
+   
+   #page-content-wrapper {
+     min-width: 100vw;
+   }
+   
+   #wrapper.toggled #sidebar-wrapper {
+     margin-left: 0;
+   }
+
+   .links{
+     transition: transform 0.3s;
+}
+.links:hover{
+    transform: scale(1.01);
+}
+.instituteContent{
+  width: 100%;
+}
+
+   @media (min-width: 768px) {
+     #sidebar-wrapper {
+       margin-left: 0;
+   
+     }
+     .sidenav {
+       width: 210px;
+     }
+   
+     #page-content-wrapper {
+       min-width: 0;
+       width: 100%;
+     }
+   
+     #wrapper.toggled #sidebar-wrapper {
+       margin-left: -15rem;
+     }
+   
+   }
+   @media (max-width: 768px) {
+     #sidebar-wrapper {
+       margin-left: 0;
+   
+     }
+     .sidenav {
+       width: 110px;
+     }
+   
+     #page-content-wrapper {
+       min-width: 0;
+       width: 100%;
+     }
+   
+     #wrapper.toggled #sidebar-wrapper {
+       margin-left: -15rem;
+     }
+   
+   }
+   /* @media (max-width:1325px){
+     .cardText{
+       font-size: 10px;
+     }
+   } */
+   @media (max-width:880px){
+    .cardText{
+      font-size: 15px;
+    }
+  }
